@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+      "target": "ES6",
+      "module": "commonjs",
+      "outDir": "./dist",
+      "strict": true,
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "baseUrl": "./src", 
+      "paths": {
+        "@config/*": ["config/*"],
+        "@controllers/*": ["controllers/*"],
+        "@middleware/*": ["middleware/*"],
+        "@models/*": ["models/*"],
+        "@routes/*": ["routes/*"],
+        "@schemas/*": ["schemas/*"], 
+        "@utils/*": ["utils/*"],
+        "@/*": ["*"]
+      },
+      "types": ["node", "express"]
+    },
+    "include": ["src/**/*"]
+  }
+  
