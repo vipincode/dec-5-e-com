@@ -1,24 +1,27 @@
 {
-    "compilerOptions": {
-      "target": "ES6",
-      "module": "commonjs",
-      "outDir": "./dist",
-      "strict": true,
-      "esModuleInterop": true,
-      "skipLibCheck": true,
-      "baseUrl": "./src", 
-      "paths": {
-        "@config/*": ["config/*"],
-        "@controllers/*": ["controllers/*"],
-        "@middleware/*": ["middleware/*"],
-        "@models/*": ["models/*"],
-        "@routes/*": ["routes/*"],
-        "@schemas/*": ["schemas/*"], 
-        "@utils/*": ["utils/*"],
-        "@/*": ["*"]
-      },
-      "types": ["node", "express"]
+  "compilerOptions": {
+    "target": "ES6",                      // Target modern JavaScript
+    "module": "commonjs",                // Use CommonJS for Node.js
+    "outDir": "./dist",                  // Output compiled files to "dist"
+    "rootDir": "./src",                 
+    "strict": true,                      // Enable strict type-checking
+    "esModuleInterop": true,             // Enable ES module interop for compatibility
+    "skipLibCheck": true,                // Skip library type checks for faster builds
+    "baseUrl": "./src",                  // Set base directory for module resolution
+    "paths": {                           // Configure path aliases
+      "@config/*": ["config/*"],
+      "@controllers/*": ["controllers/*"],
+      "@middleware/*": ["middleware/*"],
+      "@models/*": ["models/*"],
+      "@routes/*": ["routes/*"],
+      "@schemas/*": ["schemas/*"],
+      "@utils/*": ["utils/*"],
+      "@/*": ["*"]
     },
-    "include": ["src/**/*"]
-  }
-  
+    "types": ["node", "express"],        // Include Node.js and Express types
+    "resolveJsonModule": true,           // Allow importing JSON files
+    "forceConsistentCasingInFileNames": true // Ensure consistent file name casing
+  },
+  "include": ["src/**/*"],                // Include all TypeScript files in "src"
+  "exclude": ["node_modules", "dist"]     // Exclude unnecessary files
+}
