@@ -27,6 +27,7 @@ app.use((0, morgan_1.default)('dev'));
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: true }));
 app.use(body_parser_1.default.json());
+app.use('/public/uploads', express_1.default.static(__dirname + '/public/uploads'));
 app.get('/', (req, res) => {
     res.send('Hello, e-shop');
 });

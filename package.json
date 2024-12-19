@@ -1,7 +1,7 @@
 {
   "name": "express-mongoose-ts",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cross-env NODE_PATH=dist node dist/server.js",
@@ -27,6 +27,7 @@
     "module-alias": "^2.2.3",
     "mongoose": "^8.8.1",
     "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
     "tsconfig-paths": "^4.2.0",
     "zod": "^3.23.8"
   },
@@ -37,6 +38,7 @@
     "@types/jsonwebtoken": "^9.0.7",
     "@types/mongoose": "^5.11.96",
     "@types/morgan": "^1.9.9",
+    "@types/multer": "^1.4.12",
     "@types/node": "^22.9.0",
     "cross-env": "^7.0.3",
     "eslint": "^9.16.0",
@@ -47,14 +49,13 @@
     "typescript": "^5.6.3"
   },
   "_moduleAliases": {
-  "@config": "dist/config",
-  "@controllers": "dist/controllers",
-  "@middleware": "dist/middleware",
-  "@models": "dist/models",
-  "@routes": "dist/routes",
-  "@schemas": "dist/schemas",
-  "@utils": "dist/utils",
-  "@": "dist"
-}
-
+    "@config": "dist/config",
+    "@controllers": "dist/controllers",
+    "@middleware": "dist/middleware",
+    "@models": "dist/models",
+    "@routes": "dist/routes",
+    "@schemas": "dist/schemas",
+    "@utils": "dist/utils",
+    "@": "dist"
+  }
 }

@@ -20,12 +20,19 @@ const createProduct = (req, res) => __awaiter(void 0, void 0, void 0, function* 
     const category = yield category_model_1.default.findById(productData.category);
     if (!category) {
         res.status(400).json('Invalid Category!');
+        return;
+    }
+    // Check if the file was uploaded
+    const file = req.file;
+    if (!file) {
+        res.status(400).json({ message: 'Image is required!' });
+        return;
     }
     const product = new product_model_1.default({
         name: productData.name,
         description: productData.description,
         richDescription: productData.richDescription,
-        image: productData.image,
+        image: file.path.replace(/\\/g, '/'), // Normalize file path for different OS
         brand: productData.brand,
         price: productData.price,
         category: productData.category,

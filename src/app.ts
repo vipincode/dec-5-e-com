@@ -30,6 +30,7 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use('/public/uploads', express.static(__dirname + '/public/uploads'));
 
 app.get('/', (req, res) => {
   res.send('Hello, e-shop'!);

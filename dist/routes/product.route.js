@@ -2,8 +2,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const product_controller_1 = require("@controllers/product/product.controller");
+const multer_uploader_1 = require("@utils/multer-uploader");
 const router = (0, express_1.Router)();
-router.post('/product', product_controller_1.createProduct);
+router.post('/product', multer_uploader_1.fileUpload.single('image'), product_controller_1.createProduct);
 router.get('/product', product_controller_1.getAllProduct);
 router.get('/product/count', product_controller_1.getProductCount);
 router.get('/product/featured/:count', product_controller_1.getFeaturedProduct);

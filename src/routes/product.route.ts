@@ -9,10 +9,11 @@ import {
   getProductCount,
   getFeaturedProduct,
 } from '@controllers/product/product.controller';
+import { fileUpload } from '@utils/multer-uploader';
 
 const router = Router();
 
-router.post('/product', createProduct);
+router.post('/product', fileUpload.single('image'), createProduct);
 
 router.get('/product', getAllProduct);
 

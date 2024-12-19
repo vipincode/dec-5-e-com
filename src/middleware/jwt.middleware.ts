@@ -18,6 +18,7 @@ function authJwt(): RequestHandler {
 
     // /\/api\/v1\/product(.*)/ this find all after product/feature..etc
     path: [
+      { url: /\/public\/uploads(.*)/, methods: ['GET', 'OPTIONS'] },
       { url: /\/api\/v1\/product(.*)/, methods: ['GET', 'OPTIONS'] },
       { url: /\/api\/v1\/category(.*)/, methods: ['GET', 'OPTIONS'] },
       `${api}/login`,

@@ -9,13 +9,21 @@ export const createProduct = async (req: Request, res: Response) => {
   const category = await Category.findById(productData.category);
   if (!category) {
     res.status(400).json('Invalid Category!');
+    return;
+  }
+
+  // Check if the file was uploaded
+  const file = req.file;
+  if (!file) {
+    res.status(400).json({ message: 'Image is required!' });
+    return;
   }
 
   const product = new Product({
     name: productData.name,
     description: productData.description,
     richDescription: productData.richDescription,
-    image: productData.image,
+    image: file.path.replace(/\\/g, '/'), // Normalize file path for different OS
     brand: productData.brand,
     price: productData.price,
     category: productData.category,
